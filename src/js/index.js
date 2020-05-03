@@ -1,13 +1,14 @@
 import Search from "./models/Search";
+import { elements } from "./views/base";
+import * as searchView from "./views/searchView";
 
-const search = new Search("pizza");
-console.log(search);
+// const search = new Search(searchView.getInput());
 
 const state = {};
 
 const controlSearch = async () => {
   // 1. get the query from the view
-  const query = "pizza";
+  const query = searchView.getInput();
 
   //  if query exist
   if (query) {
@@ -24,7 +25,7 @@ const controlSearch = async () => {
   }
 };
 
-document.querySelector(".search").addEventListener("submit", (e) => {
+elements.searchForm.addEventListener("submit", (e) => {
   e.preventDefault();
   controlSearch();
 });
