@@ -22,6 +22,7 @@ const controlSearch = async () => {
 
     // 5. console the results for now
     console.log(state.search.result);
+    searchView.renderResults(state.search.result);
   }
 };
 
