@@ -11,7 +11,6 @@ export const clearResults = () => {
 };
 
 const renderRecipe = (recipe) => {
-  console.log(recipe);
   var markup = `
     <li>
       <a class="results__link results__link--active" href="#${recipe.recipe_id}">
