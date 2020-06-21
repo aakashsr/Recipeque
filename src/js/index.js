@@ -1,10 +1,19 @@
 import Search from "./models/Search";
-import { elements, renderLoader, clearLoader } from "./views/base";
+import Recipe from './models/Recipe';
+import {
+  elements,
+  renderLoader,
+  clearLoader
+} from "./views/base";
 import * as searchView from "./views/searchView";
 
 // const search = new Search(searchView.getInput());
 
 const state = {};
+
+/*** 
+ * SEARCH CONTROLLER
+ ***/
 
 const controlSearch = async () => {
   // 1. get the query from the view
@@ -14,17 +23,22 @@ const controlSearch = async () => {
   if (query) {
     // 2. create a new search object with help of this query and save in state
     state.search = new Search(query);
+    console.log(state);
 
     // 3. Prepared UI for results
     searchView.clearInput();
     searchView.clearResults();
+
+    // 4. rendered the loader
     renderLoader(elements.searchRes);
 
-    // 4. Make the search
+    // 5. Make the search
     await state.search.getResults();
 
-    // 5. redner the results
+    // 6. Clear the loader
     clearLoader();
+
+    // 6. render the results
     searchView.renderResults(state.search.result);
   }
 };
@@ -42,3 +56,11 @@ elements.searchResPages.addEventListener("click", (e) => {
     searchView.renderResults(state.search.result, goToPage);
   }
 });
+
+/*** 
+RECIPE CONTROLLER
+ ***/
+
+const r = new Recipe(47746);
+r.getRecipe();
+console.log(r);
