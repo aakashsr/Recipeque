@@ -79,7 +79,10 @@ const recipeSearch = async () => {
       // 3. Make the search
       await state.recipe.getRecipe();
 
-      // 4. calculate time and servings
+      // 4. Parse the ingredients
+      state.recipe.parseIngredients();
+
+      // 5. calculate time and servings
       state.recipe.calcTime();
       state.recipe.calcServings();
 
