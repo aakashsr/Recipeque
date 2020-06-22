@@ -1,5 +1,5 @@
 <h1 align="center">
-  	<img  src="img/thumbnail.png" alt="Recepique Logo" /> 
+  	<img  src="thumbnail.png" alt="Recepique Logo" /> 
    <br>
   Recipique
 </h1>
