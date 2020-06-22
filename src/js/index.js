@@ -6,6 +6,7 @@ import {
   clearLoader
 } from "./views/base";
 import * as searchView from "./views/searchView";
+import * as recipeView from "./views/recipeView";
 
 // const search = new Search(searchView.getInput());
 
@@ -86,7 +87,12 @@ const recipeSearch = async () => {
       state.recipe.calcTime();
       state.recipe.calcServings();
 
-      console.log(state.recipe);
+      // 6. render loader
+      renderLoader(elements.recipe);
+
+      recipeView.renderRecipe(state.recipe);
+      // 7. clear loader
+      clearLoader();
     } catch (error) {
 
       alert('Error processing recipe')
