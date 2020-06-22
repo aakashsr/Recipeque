@@ -1,5 +1,5 @@
 <h1 align="center">
-  	<img  src="thumbnail.png" alt="Recepique Logo" /> 
+  	<img  src="/src/thumbnail.png" alt="Recipeque Logo" /> 
    <br>
-  Recipique
+  Recipeque
 </h1>
