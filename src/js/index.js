@@ -32,14 +32,19 @@ const controlSearch = async () => {
     // 4. rendered the loader
     renderLoader(elements.searchRes);
 
-    // 5. Make the search
-    await state.search.getResults();
+    try {
+      // 5. Make the search
+      await state.search.getResults();
 
-    // 6. Clear the loader
-    clearLoader();
+      // 6. Clear the loader
+      clearLoader();
 
-    // 6. render the results
-    searchView.renderResults(state.search.result);
+      // 6. render the results
+      searchView.renderResults(state.search.result);
+    } catch (error) {
+      alert('Somethign went wrong with the search!');
+    }
+
   }
 };
 
