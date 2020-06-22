@@ -7,7 +7,7 @@ export default class Recipe {
 
     async getRecipe() {
         try {
-            const res = await axios(`https://forkify-api.herokuapp.com/api/get?rId=${this.id}`);
+            const res = await axios(`https://forkify-api.herokuapp.com/api/get?rId=${this.id}1`);
             this.title = res.data.recipe.title;
             this.author = res.data.recipe.publisher;
             this.img = res.data.recipe.image_url;
@@ -16,7 +16,7 @@ export default class Recipe {
             console.log(res);
 
         } catch (error) {
-            console.log(error);
+            alert('Something went wrong!')
         }
     }
 

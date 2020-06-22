@@ -70,14 +70,21 @@ const recipeSearch = async () => {
     // 2. create a new recipe object with help of this id and save in state
     state.recipe = new Recipe(id);
 
-    // 3. Make the search
-    await state.recipe.getRecipe();
+    try {
+      // 3. Make the search
+      await state.recipe.getRecipe();
 
-    // 4. calculate time and servings
-    state.recipe.calcTime();
-    state.recipe.calcServings();
+      // 4. calculate time and servings
+      state.recipe.calcTime();
+      state.recipe.calcServings();
 
-    console.log(state.recipe);
+      console.log(state.recipe);
+    } catch (error) {
+
+      alert('Error processing recipe')
+
+    }
+
   }
 };
 
